@@ -1,0 +1,49 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.main{
+    height: 60vh;
+    width: 80vw;
+    border: 1px solid black;
+    margin-left: 10vw;
+    border-radius: 150px;
+    margin-top: 10vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10vw;
+    text-align: center;
+}
+.bet{
+    text-align: center;
+    width: 15vw;
+    padding: 10px;
+    border-radius: 20px;
+    outline: none;
+    font-size: 20px;
+    border: 1px solid blue;
+}
+#time{
+    font-size: 40px;
+    border: 1px solid black;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 50% 50%;
+    display: block;
+}
+#dice{
+    display: none;
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+    border-radius: 50% 50%;
+    background-image: url(./img/roll1.gif);
+    background-position: center;
+    background-size: cover;
+}
+#dice-result{
+    display: none;
+}
