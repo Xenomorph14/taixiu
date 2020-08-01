@@ -24,24 +24,33 @@ inputBetTai.addEventListener("blur", ()=>{
     let start = 1;
     function countDownDice(){
         dice.style.display ="block";
+        dice.style.backgroundImage = 'url(./img/roll1.gif)';
         setTimeout(() => {
             dice.style.display = "none";
             result.style.display = "block";
-        },5000);
+        },4000);
+        setTimeout(()=>{
+            result.style.display = "none";
+            time.style.display = "block";
+            startGame();
+        },7000)
     }
-    function show(){
-        result.style.display = "none";
-        time.style.display = "block";
+    
+    function startGame(){
+        let start =1;
+        let coutDownTime =  setInterval(function(){
+            time.innerText = start;
+            start--;
+            if(start == -1){
+                clearInterval(coutDownTime);
+                time.style.display = "none";
+                countDownDice();
+            }
+        },1000);
     }
-    let coutDownTime =  setInterval(function(){
-        time.innerText = start;
-        start--;
-        if(start == -1){
-            clearInterval(coutDownTime);
-            time.style.display = "none";
-            countDownDice();
-        }
-    },1000);
+    startGame();
+    
+
 
 
 
