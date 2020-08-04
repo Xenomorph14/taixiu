@@ -29,9 +29,9 @@ let result_totalTai = 0;
 let result_totalXiu = 0;
 btnBet.addEventListener("click", () => {
     result_totalTai += Number(inputBetTai.value);
-    totalTai.innerHTML = `Tổng: ${result_totalTai}`;
+    totalTai.innerHTML = `${result_totalTai}`;
     result_totalXiu += Number(inputBetXiu.value);
-    totalXiu.innerHTML = `Tổng: ${result_totalXiu}`;
+    totalXiu.innerHTML = `${result_totalXiu}`;
     inputBetTai.value = 0;
     inputBetXiu.value = 0;
 });
@@ -82,7 +82,11 @@ function gameOver() {
         result = "xiu";
     else result = "tai";
     if (result == "xiu") {
-        money.innerText = Number(money.innerText) + Number(inputBetXiu.value);
+        money.innerText = Number(money.innerText) + Number(totalXiu.innerText);
+        money.innerText = Number(money.innerText) - Number(totalTai.innerText);
+    } else {
+        money.innerText = Number(money.innerText) - Number(totalXiu.innerText);
+        money.innerText = Number(money.innerText) + Number(totalTai.innerText);
     }
 };
 
