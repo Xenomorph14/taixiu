@@ -1,9 +1,10 @@
-*{
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
-.main{
+
+.main {
     height: 60vh;
     width: 80vw;
     border: 1px solid black;
@@ -12,11 +13,13 @@
     margin-top: 10vh;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     padding: 0 10vw;
+    align-items: center;
     text-align: center;
 }
-.bet{
+
+
+.bet {
     text-align: center;
     width: 15vw;
     padding: 10px;
@@ -25,7 +28,8 @@
     font-size: 20px;
     border: 1px solid blue;
 }
-#time{
+
+#time {
     font-size: 40px;
     border: 1px solid black;
     width: 200px;
@@ -34,7 +38,8 @@
     border-radius: 50% 50%;
     display: block;
 }
-#dice{
+
+#dice {
     display: none;
     width: 200px;
     height: 200px;
@@ -44,6 +49,7 @@
     background-position: center;
     background-size: cover;
 }
-#dice-result{
+
+#dice-result {
     display: none;
 }

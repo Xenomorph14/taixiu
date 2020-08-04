@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,21 @@
     <style>
         input[type=number]::-webkit-inner-spin-button {
             -webkit-appearance: none;
-}
+        }
     </style>
     <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
     <p>Tài xỉu Mindx</p>
     <div class="main">
         <div class="xiu">
             <p style="font-size:40px;margin-bottom:10px;">XIU</p>
-            <input type="number" min="0" max="100000" value="0" id="input-bet-xiu" class="bet">
+            <p id="total-xiu" style="text-align: left;margin-left:30px;margin-bottom:10px;">Tổng: 0</p>
+            <form>
+                <input type="number" min="0" max="100000" value="0" id="input-bet-xiu" class="bet">
+            </form>
+
         </div>
         <div id="time">
         </div>
@@ -29,12 +35,16 @@
         </div>
         <div class="tai">
             <p style="font-size:40px;margin-bottom:10px;color: red;">TÀI</p>
+            <p id="total-tai" style="text-align: left;margin-left:30px;margin-bottom:10px;">Tổng: 0</p>
             <input type="number" min="0" max="100000" value="0" id="input-bet-tai" class="bet">
         </div>
     </div>
     <div class="status">
 
     </div>
-        <script src="app.js"></script>
+    <button id="btn-bet">Bet</button>
+    <button id="btn-clear">Clear</button>
+    <script src="app.js"></script>
 </body>
+
 </html>
