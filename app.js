@@ -22,16 +22,16 @@ function rdDice() {
     return [rdDice1, rdDice2, rdDice3];
 }
 
-
-
 //BET
 let result_totalTai = 0;
 let result_totalXiu = 0;
 btnBet.addEventListener("click", () => {
     result_totalTai += Number(inputBetTai.value);
     totalTai.innerHTML = `${result_totalTai}`;
+    money.innerText = Number(money.innerText) - Number(inputBetTai.value);
     result_totalXiu += Number(inputBetXiu.value);
     totalXiu.innerHTML = `${result_totalXiu}`;
+    money.innerText = Number(money.innerText) - Number(inputBetXiu.value);
     inputBetTai.value = 0;
     inputBetXiu.value = 0;
 });
@@ -39,7 +39,7 @@ btnClear.addEventListener("click", () => {
     inputBetTai.value = 0;
     inputBetXiu.value = 0;
 })
-inputBetXiu.addEventListener("blur", () => {
+inputBetXiu.addEventListener("keyup", () => {
     let value_bet_xiu = inputBetXiu.value;
     if (value_bet_xiu < 0) {
         inputBetXiu.value = 0;
@@ -47,7 +47,7 @@ inputBetXiu.addEventListener("blur", () => {
     else if (value_bet_xiu > 100000)
         inputBetXiu.value = 100000;
 })
-inputBetTai.addEventListener("blur", () => {
+inputBetTai.addEventListener("keyup", () => {
     let value_bet = inputBetTai.value;
     if (value_bet < 0) {
         inputBetTai.value = 0;
@@ -71,7 +71,6 @@ function countDownDice() {
         time.style.display = "block";
         startGame();
     }, 7000);
-
 }
 
 function gameOver() {
@@ -82,17 +81,17 @@ function gameOver() {
         result = "xiu";
     else result = "tai";
     if (result == "xiu") {
-        money.innerText = Number(money.innerText) + Number(totalXiu.innerText);
-        money.innerText = Number(money.innerText) - Number(totalTai.innerText);
+        money.innerText = Number(money.innerText) + Number(totalXiu.innerText) * 2;
     } else {
-        money.innerText = Number(money.innerText) - Number(totalXiu.innerText);
-        money.innerText = Number(money.innerText) + Number(totalTai.innerText);
+        money.innerText = Number(money.innerText) + Number(totalTai.innerText) * 2;
     }
+
 };
 
 function startGame() {
-    let start = 1;
-
+    let start = 10;
+    totalXiu.innerHTML = `0`;
+    totalTai.innerHTML = `0`;
     let coutDownTime = setInterval(function () {
         time.innerText = start;
         start--;
@@ -103,9 +102,11 @@ function startGame() {
         }
     }, 1000);
     gameOver();
+    
 }
 
 startGame();
+gameOver();
 
 
 
