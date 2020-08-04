@@ -4,9 +4,27 @@ let totalTai = document.getElementById("total-tai");
 let totalXiu = document.getElementById("total-xiu");
 const btnBet = document.getElementById("btn-bet");
 const btnClear = document.getElementById("btn-clear");
+const dice1 = document.getElementById("dice1");
+const dice2 = document.getElementById("dice2");
+const dice3 = document.getElementById("dice3");
+const money = document.getElementById("tkhienco");
 
-//bet
+//Random Dice
 
+function rdDice() {
+    let rdDice1 = 1, rdDice2 = 1, rdDice3 = 1;
+    rdDice1 = Math.floor(1 + Math.random() * 6);
+    dice1.innerHTML = `  <img src="./img/dice${rdDice1}.png" alt="">`;
+    rdDice2 = Math.floor(1 + Math.random() * 6);
+    dice2.innerHTML = `  <img src="./img/dice${rdDice2}.png" alt="">`;
+    rdDice3 = Math.floor(1 + Math.random() * 6);
+    dice3.innerHTML = `  <img src="./img/dice${rdDice3}.png" alt="">`;
+    return [rdDice1, rdDice2, rdDice3];
+}
+
+
+
+//BET
 let result_totalTai = 0;
 let result_totalXiu = 0;
 btnBet.addEventListener("click", () => {
@@ -44,20 +62,33 @@ const dice = document.getElementById("dice");
 let result = document.getElementById("dice-result");
 function countDownDice() {
     dice.style.display = "block";
-    dice.style.backgroundImage = 'url(./img/roll1.gif)';
     setTimeout(() => {
         dice.style.display = "none";
         result.style.display = "block";
-    }, 4000);
+    }, 3300);
     setTimeout(() => {
         result.style.display = "none";
         time.style.display = "block";
         startGame();
     }, 7000);
+
 }
 
+function gameOver() {
+    let arrDice = rdDice();
+    let result;
+    let sum = Number(arrDice[0] + arrDice[1] + arrDice[2]);
+    if (sum <= 10)
+        result = "xiu";
+    else result = "tai";
+    if (result == "xiu") {
+        money.innerText = Number(money.innerText) + Number(inputBetXiu.value);
+    }
+};
+
 function startGame() {
-    let start = 5;
+    let start = 1;
+
     let coutDownTime = setInterval(function () {
         time.innerText = start;
         start--;
@@ -67,9 +98,11 @@ function startGame() {
             countDownDice();
         }
     }, 1000);
+    gameOver();
 }
 
 startGame();
+
 
 
 
