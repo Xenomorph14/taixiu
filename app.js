@@ -1,7 +1,7 @@
 const inputBetXiu = document.getElementById("input-bet-xiu");
 const inputBetTai = document.getElementById("input-bet-tai");
-let totalTai = document.getElementById("total-tai");
-let totalXiu = document.getElementById("total-xiu");
+const totalTai = document.getElementById("total-tai");
+const totalXiu = document.getElementById("total-xiu");
 const btnBet = document.getElementById("btn-bet");
 const btnClear = document.getElementById("btn-clear");
 const dice1 = document.getElementById("dice1");
@@ -13,11 +13,11 @@ const money = document.getElementById("tkhienco");
 
 function rdDice() {
     let rdDice1 = 1, rdDice2 = 1, rdDice3 = 1;
-    rdDice1 = Math.floor(1 + Math.random() * 6);
+    rdDice1 = Math.floor(1 + Math.random() * 2);
     dice1.innerHTML = `  <img src="./img/dice${rdDice1}.png" alt="">`;
-    rdDice2 = Math.floor(1 + Math.random() * 6);
+    rdDice2 = Math.floor(1 + Math.random() * 2);
     dice2.innerHTML = `  <img src="./img/dice${rdDice2}.png" alt="">`;
-    rdDice3 = Math.floor(1 + Math.random() * 6);
+    rdDice3 = Math.floor(1 + Math.random() * 2);
     dice3.innerHTML = `  <img src="./img/dice${rdDice3}.png" alt="">`;
     return [rdDice1, rdDice2, rdDice3];
 }
@@ -81,17 +81,16 @@ function gameOver() {
         result = "xiu";
     else result = "tai";
     if (result == "xiu") {
-        money.innerText = Number(money.innerText) + Number(totalXiu.innerText) * 2;
+        money.innerText =Number(money.innerText) + Number(totalXiu.innerText) * 2;
     } else {
         money.innerText = Number(money.innerText) + Number(totalTai.innerText) * 2;
     }
-
+console.log(money.innerText)
 };
 
 function startGame() {
-    let start = 10;
-    totalXiu.innerHTML = `0`;
-    totalTai.innerHTML = `0`;
+    let start = 15;
+  
     let coutDownTime = setInterval(function () {
         time.innerText = start;
         start--;
@@ -102,12 +101,15 @@ function startGame() {
         }
     }, 1000);
     gameOver();
+    result_totalTai=0;
+    result_totalXiu=0;
+    totalXiu.innerHTML = `0`;
+    totalTai.innerHTML = `0`;
     
 }
 
 startGame();
 gameOver();
-
 
 
 
