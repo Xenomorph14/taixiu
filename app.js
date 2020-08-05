@@ -13,11 +13,11 @@ const money = document.getElementById("tkhienco");
 
 function rdDice() {
     let rdDice1 = 1, rdDice2 = 1, rdDice3 = 1;
-    rdDice1 = Math.floor(1 + Math.random() * 2);
+    rdDice1 = Math.floor(1 + Math.random() * 6);
     dice1.innerHTML = `  <img src="./img/dice${rdDice1}.png" alt="">`;
-    rdDice2 = Math.floor(1 + Math.random() * 2);
+    rdDice2 = Math.floor(1 + Math.random() * 6);
     dice2.innerHTML = `  <img src="./img/dice${rdDice2}.png" alt="">`;
-    rdDice3 = Math.floor(1 + Math.random() * 2);
+    rdDice3 = Math.floor(1 + Math.random() * 6);
     dice3.innerHTML = `  <img src="./img/dice${rdDice3}.png" alt="">`;
     return [rdDice1, rdDice2, rdDice3];
 }
@@ -85,7 +85,6 @@ function gameOver() {
     } else {
         money.innerText = Number(money.innerText) + Number(totalTai.innerText) * 2;
     }
-console.log(money.innerText)
 };
 
 function startGame() {
