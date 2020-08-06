@@ -81,7 +81,7 @@ function gameOver() {
         result = "xiu";
     else result = "tai";
     if (result == "xiu") {
-        money.innerText =Number(money.innerText) + Number(totalXiu.innerText) * 2;
+        money.innerText = Number(money.innerText) + Number(totalXiu.innerText) * 2;
     } else {
         money.innerText = Number(money.innerText) + Number(totalTai.innerText) * 2;
     }
@@ -89,7 +89,7 @@ function gameOver() {
 
 function startGame() {
     let start = 15;
-  
+
     let coutDownTime = setInterval(function () {
         time.innerText = start;
         start--;
@@ -100,13 +100,11 @@ function startGame() {
         }
     }, 1000);
     gameOver();
-    result_totalTai=0;
-    result_totalXiu=0;
+    result_totalTai = 0;
+    result_totalXiu = 0;
     totalXiu.innerHTML = `0`;
     totalTai.innerHTML = `0`;
-    
 }
-
 startGame();
 gameOver();
 

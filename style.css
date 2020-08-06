@@ -53,3 +53,36 @@
 #dice-result {
     display: none;
 }
+
+.btn {
+    display: flex;
+    justify-content: center;
+    margin-top: -10vh;
+
+}
+
+#btn-bet {
+    padding: 10px 35px;
+    margin-right: 20px;
+    border: 0;
+    background-color: aqua;
+    font-size: 18px;
+}
+
+#btn-bet:hover {
+    background-color: rgb(0, 201, 201);
+    cursor: pointer;
+}
+
+#btn-clear {
+    padding: 10px 25px;
+    outline: none;
+    background-color: gray;
+    border: 0;
+    font-size: 18px;
+}
+
+#btn-clear:hover {
+    background-color: rgba(128, 128, 128, 0.863);
+    cursor: pointer;
+}
