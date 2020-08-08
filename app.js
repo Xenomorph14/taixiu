@@ -77,6 +77,7 @@ function gameOver() {
   let sum = Number(arrDice[0] + arrDice[1] + arrDice[2]);
   if (sum <= 10) result = "xiu";
   else result = "tai";
+  console.log(result);
   if (result == "xiu") {
     money.innerText = Number(money.innerText) + Number(totalXiu.innerText) * 2;
   } else {
@@ -85,7 +86,7 @@ function gameOver() {
 }
 
 function startGame() {
-  let start = 15;
+  let start = 3;
 
   let coutDownTime = setInterval(function () {
     time.innerText = start;

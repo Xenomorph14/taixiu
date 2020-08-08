@@ -1,64 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
-    <style>
-      input[type="number"]::-webkit-inner-spin-button {
-        -webkit-appearance: none;
-      }
-    </style>
-    <link rel="stylesheet" href="style.css" />
-  </head>
 
-  <body>
-    <p class="title">Tài xỉu Mindx</p>
-    <div class="main">
-      <div class="xiu">
-        <p style="font-size: 40px; margin-bottom: 10px;">XIU</p>
-        <p id="total-xiu" style="margin-bottom: 10px;">0</p>
-        <form>
-          <input
-            type="number"
-            min="0"
-            max="100000"
-            value="0"
-            id="input-bet-xiu"
-            class="bet"
-          />
-        </form>
-      </div>
-      <div class="circle">
-        <div id="time"></div>
-        <div id="dice"></div>
-        <div id="dice-result">
-          <div id="dice1"></div>
-          <div id="dice2"></div>
-          <div id="dice3"></div>
-        </div>
-      </div>
-      <div class="tai">
-        <p style="font-size: 40px; margin-bottom: 10px; color: white;">TÀI</p>
-        <p id="total-tai" style="margin-bottom: 10px;">0</p>
-        <input
-          type=" number"
-          min="0"
-          max="100000"
-          value="0"
-          id="input-bet-tai"
-          class="bet"
-        />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    input[type="number"]::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+    }
+  </style>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <p class="title">Tài xỉu Mindx</p>
+  <div class="main">
+    <div class="xiu">
+      <p style="font-size: 40px; margin-bottom: 10px;">XIU</p>
+      <p id="total-xiu" style="margin-bottom: 10px;">0</p>
+      <form>
+        <input type="number" min="0" max="100000" value="0" id="input-bet-xiu" class="bet" />
+      </form>
+    </div>
+    <div class="circle">
+      <div id="time"></div>
+      <div id="dice"></div>
+      <div id="dice-result">
+        <div id="dice1"></div>
+        <div id="dice2"></div>
+        <div id="dice3"></div>
       </div>
     </div>
-    <div class="status"></div>
-    <div class="btn">
-      <button id="btn-bet">Bet</button>
-      <button id="btn-clear">Clear</button>
+    <div class="tai">
+      <p style="font-size: 40px; margin-bottom: 10px; color: white;">TÀI</p>
+      <p id="total-tai" style="margin-bottom: 10px;">0</p>
+      <input type=" number" min="0" max="100000" value="0" id="input-bet-tai" class="bet" />
     </div>
-    <div id="tkhienco">
-      100000000
-    </div>
-    <script src="app.js"></script>
-  </body>
+  </div>
+  <div class="status"></div>
+  <div class="btn">
+    <button id="btn-bet">Bet</button>
+    <button id="btn-clear">Clear</button>
+  </div>
+  <div id="tkhienco">
+    100000000
+  </div>
+  <script src="app.js"></script>
+</body>
+
 </html>

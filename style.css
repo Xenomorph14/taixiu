@@ -47,6 +47,7 @@
   background-image: url(./img/roll1.gif);
   background-position: center;
   background-size: cover;
+  background-repeat: repeat;
 }
 
 #dice-result {
@@ -63,6 +64,7 @@
   padding: 10px 35px;
   margin-right: 20px;
   border: 0;
+  outline: none;
   background-color: aqua;
   font-size: 18px;
 }
@@ -99,17 +101,20 @@
   margin-top: 50px;
   margin-left: 45px;
 }
+
 #dice2 img {
   width: 80px;
   height: 80px;
   margin-top: 50px;
   margin-right: 45px;
 }
+
 #dice3 img {
   width: 80px;
   height: 80px;
   margin-bottom: 35px;
 }
+
 .circle {
   background-image: url(./img/circle.png);
   background-size: 280px 280px;
