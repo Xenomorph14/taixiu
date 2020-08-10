@@ -5,7 +5,7 @@
 }
 
 .main {
-  height: 60vh;
+  height: 55vh;
   width: 80vw;
   margin-left: 10vw;
   border-radius: 150px;
@@ -126,6 +126,7 @@
   height: 250px;
   margin-bottom: 50px;
 }
+
 .user {
   padding-top: 50px;
   display: flex;
@@ -133,9 +134,11 @@
   font-size: 20px;
   font-weight: 500;
 }
+
 .user p {
   margin-right: 5px;
 }
+
 .circle-xiu {
   width: 100px;
   height: 100px;
@@ -149,6 +152,7 @@
   font-weight: 900;
   margin-bottom: 10px;
 }
+
 .circle-tai {
   width: 100px;
   height: 100px;
@@ -163,26 +167,41 @@
   margin-bottom: 10px;
   color: white;
 }
+
 .tai,
 .xiu {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
+
 #total-tai {
   margin-bottom: 10px;
   font-size: 22px;
 }
+
 #total-xiu {
   margin-bottom: 10px;
   font-size: 22px;
 }
+
 .logo {
   background-image: url(./img/images.jpg);
-  background-size: 13%;
+  background-size: 10%;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 150px;
+  height: 15vh;
   background-position: center;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+#thongbao {
   margin-top: 3vh;
+  opacity: 0;
+  width: 100vw;
+  height: 7vh;
+  line-height: 7vh;
+  text-align: center;
+  font-size: 30px;
 }
