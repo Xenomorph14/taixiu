@@ -25,6 +25,7 @@ function rdDice() {
 }
 
 //BET
+localStorage.setItem("money", money.innerText);
 money.innerText = `${localStorage.getItem("money")}`;
 let result_totalTai = 0;
 let result_totalXiu = 0;
@@ -34,13 +35,22 @@ btnBet.addEventListener("click", () => {
     inputBetTai.value = 0;
     inputBetXiu.value = 0;
   } else {
-    totalTai.innerText = Number(totalTai.innerText) + Number(inputBetTai.value);
-    money.innerText = Number(money.innerText) - Number(inputBetTai.value);
-    totalXiu.innerText = Number(totalXiu.innerText) + Number(inputBetXiu.value);
-    money.innerText = Number(money.innerText) - Number(inputBetXiu.value);
+    if (
+      Number(money.innerText) >=
+      Number(inputBetTai.value) + Number(inputBetXiu.value)
+    ) {
+      totalTai.innerText =
+        Number(totalTai.innerText) + Number(inputBetTai.value);
+      money.innerText = Number(money.innerText) - Number(inputBetTai.value);
+      totalXiu.innerText =
+        Number(totalXiu.innerText) + Number(inputBetXiu.value);
+      money.innerText = Number(money.innerText) - Number(inputBetXiu.value);
+      inputBetTai.value = 0;
+      inputBetXiu.value = 0;
+      localStorage.setItem("money", money.innerText);
+    } else showStatus("Không đủ tiền để cược");
     inputBetTai.value = 0;
     inputBetXiu.value = 0;
-    localStorage.setItem("money", money.innerText);
   }
 });
 btnClear.addEventListener("click", () => {
