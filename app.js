@@ -25,9 +25,9 @@ function rdDice() {
 }
 
 //BET
+money.innerText = `${localStorage.getItem("money")}`;
 let result_totalTai = 0;
 let result_totalXiu = 0;
-money.innerText=localStorage.getItem("money");
 btnBet.addEventListener("click", () => {
   if (start <= 0) {
     showStatus("Hết giờ đặt cược");
@@ -40,7 +40,7 @@ btnBet.addEventListener("click", () => {
     money.innerText = Number(money.innerText) - Number(inputBetXiu.value);
     inputBetTai.value = 0;
     inputBetXiu.value = 0;
-    localStorage.setItem("money",money.innerText);
+    localStorage.setItem("money", money.innerText);
   }
 });
 btnClear.addEventListener("click", () => {
