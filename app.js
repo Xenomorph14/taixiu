@@ -9,7 +9,9 @@ const dice2 = document.getElementById("dice2");
 const dice3 = document.getElementById("dice3");
 const money = document.getElementById("tkhienco");
 const thongBao = document.getElementById("thongbao");
+const diceRoll = document.getElementById("dice-roll");
 //Random Dice
+
 let start = 10;
 function rdDice() {
   let rdDice1 = 1,
@@ -25,10 +27,8 @@ function rdDice() {
 }
 
 //BET
-localStorage.setItem("money", money.innerText);
+
 money.innerText = `${localStorage.getItem("money")}`;
-let result_totalTai = 0;
-let result_totalXiu = 0;
 btnBet.addEventListener("click", () => {
   if (start <= 0) {
     showStatus("Hết giờ đặt cược");
@@ -67,6 +67,7 @@ inputBetXiu.addEventListener("keyup", () => {
     showStatus("Số tiền cược không quá 100000");
   }
 });
+
 inputBetTai.addEventListener("keyup", () => {
   let value_bet = inputBetTai.value;
   if (value_bet < 0) {
@@ -83,6 +84,8 @@ let time = document.getElementById("time");
 const dice = document.getElementById("dice");
 let result = document.getElementById("dice-result");
 function countDownDice() {
+  diceRoll.src = "";
+  diceRoll.src = "./img/roll1.gif";
   dice.style.display = "block";
   setTimeout(() => {
     dice.style.display = "none";
@@ -136,13 +139,14 @@ function gameOver() {
           Number(totalXiu.innerText) - Number(totalTai.innerText)
         }`
       );
+    localStorage.setItem("money", money.innerText);
   }
   totalXiu.innerText = 0;
   totalTai.innerText = 0;
 }
 function startGame() {
   showStatus(`Game bắt đầu`);
-  start = 10;
+  start = 15;
   let coutDownTime = setInterval(function () {
     time.innerHTML = `${start}`;
     start--;
@@ -151,9 +155,7 @@ function startGame() {
       time.style.display = "none";
       countDownDice();
       gameOver();
-      time.innerText = "10";
-      result_totalTai = 0;
-      result_totalXiu = 0;
+      time.innerText = "15";
     }
   }, 1000);
 }
