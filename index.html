@@ -13,61 +13,62 @@
   </head>
 
   <body>
-    <div class="logo"></div>
-    <div class="main">
-      <div class="xiu">
-        <p class="circle-xiu">
-          XỈU
-        </p>
-        <p id="total-xiu">0</p>
-        <input
-          type="number"
-          min="0"
-          value="0"
-          max="100000"
-          id="input-bet-xiu"
-          class="bet"
-        />
-      </div>
-      <div class="circle">
-        <div id="time"></div>
-        <div id="dice">
-          <img src="" alt="" id="dice-roll" />
+    <div class="container">
+      <div class="logo"></div>
+      <div class="main">
+        <div class="xiu">
+          <p class="circle-xiu">
+            XỈU
+          </p>
+          <p id="total-xiu">0</p>
+          <input
+            type="number"
+            min="0"
+            value="0"
+            max="100000"
+            id="input-bet-xiu"
+            class="bet"
+          />
         </div>
-        <div id="dice-result">
-          <div id="dice1"></div>
-          <div id="dice2"></div>
-          <div id="dice3"></div>
+        <div class="circle">
+          <div id="time"></div>
+          <div id="dice">
+            <img src="" alt="" id="dice-roll" />
+          </div>
+          <div id="dice-result">
+            <div id="dice1"></div>
+            <div id="dice2"></div>
+            <div id="dice3"></div>
+          </div>
+        </div>
+        <div class="tai">
+          <p class="circle-tai">
+            TÀI
+          </p>
+          <p id="total-tai">0</p>
+          <input
+            type=" number"
+            min="0"
+            value="0"
+            max="100000"
+            id="input-bet-tai"
+            class="bet"
+          />
         </div>
       </div>
-      <div class="tai">
-        <p class="circle-tai">
-          TÀI
-        </p>
-        <p id="total-tai">0</p>
-        <input
-          type=" number"
-          min="0"
-          value="0"
-          max="100000"
-          id="input-bet-tai"
-          class="bet"
-        />
+      <div class="status"></div>
+      <div class="btn">
+        <button id="btn-bet">Bet</button>
+        <button id="btn-clear">Clear</button>
+      </div>
+      <div id="thongbao"></div>
+      <div class="user">
+        <p>Số tiền của bạn:</p>
+        <div id="tkhienco">
+          1000000
+        </div>
       </div>
     </div>
-    <div class="status"></div>
-    <div class="btn">
-      <button id="btn-bet">Bet</button>
-      <button id="btn-clear">Clear</button>
-    </div>
-    <div id="thongbao"></div>
-    <div class="user">
-      <p>Số tiền của bạn:</p>
-      <div id="tkhienco">
-        1000000
-      </div>
-    </div>
-
     <script src="app.js"></script>
   </body>
 </html>

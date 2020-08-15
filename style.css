@@ -3,7 +3,12 @@
   padding: 0;
   box-sizing: border-box;
 }
-
+.container {
+  height: 98vh;
+  display: flex;
+  flex-direction: column;
+  background-image: url(./img/bgtest.png);
+}
 .main {
   height: 55vh;
   width: 80vw;
@@ -14,7 +19,7 @@
   padding: 0 10vw;
   align-items: center;
   text-align: center;
-  background-image: url(./img/background.jpg);
+  background-image: url(./img/background-616360_1920.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
 }
@@ -130,8 +135,9 @@
   padding-top: 50px;
   display: flex;
   justify-content: center;
-  font-size: 20px;
+  font-size: 22px;
   font-weight: 500;
+  font-weight: 700;
 }
 
 .user p {
@@ -142,7 +148,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50% 50%;
-  border: 3px solid black;
+  border: 3px solid aqua;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -150,6 +156,7 @@
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 10px;
+  color: aqua;
 }
 
 .circle-tai {
@@ -177,25 +184,28 @@
 #total-tai {
   margin-bottom: 10px;
   font-size: 22px;
+  color: white;
 }
 
 #total-xiu {
   margin-bottom: 10px;
   font-size: 22px;
+  color: aqua;
 }
 
 .logo {
-  background-image: url(./img/images.jpg);
+  background-image: url(./img/logotaixiu.png);
   background-size: 10%;
   background-repeat: no-repeat;
   width: 100vw;
   height: 15vh;
   background-position: center;
-  margin-bottom: 30px;
-  margin-top: 10px;
+  margin-bottom: 15px;
+  margin-top: 20px;
 }
 
 #thongbao {
+  padding-top: 3vh;
   margin-top: 3vh;
   opacity: 0;
   width: 100vw;
@@ -203,4 +213,5 @@
   line-height: 7vh;
   text-align: center;
   font-size: 30px;
+  color: blue;
 }
