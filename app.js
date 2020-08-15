@@ -137,6 +137,7 @@ function tongKet() {
             Number(totalTai.innerText) - Number(totalXiu.innerText)
           }`
         );
+        localStorage.setItem("money", money.innerText);
     } else {
       money.innerText =
         Number(money.innerText) + Number(totalTai.innerText) * 2;
