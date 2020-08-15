@@ -87,15 +87,6 @@ function countDownDice() {
   diceRoll.src = "";
   diceRoll.src = "./img/roll1.gif";
   dice.style.display = "block";
-  setTimeout(() => {
-    dice.style.display = "none";
-    result.style.display = "flex";
-  }, 3200);
-  setTimeout(() => {
-    result.style.display = "none";
-    time.style.display = "block";
-    startGame();
-  }, 9000);
 }
 
 function showStatus(msg, timeout = 3000) {
@@ -106,47 +97,69 @@ function showStatus(msg, timeout = 3000) {
   }, timeout);
 }
 function gameOver() {
-  let arrDice = rdDice();
-  if (Number(arrDice[0] + arrDice[1] + arrDice[2]) <= 10) {
-    money.innerText = Number(money.innerText) + Number(totalXiu.innerText) * 2;
-    if (totalXiu.innerText > totalTai.innerText)
-      showStatus(
-        `Ván này thắng ${
-          Number(totalXiu.innerText) - Number(totalTai.innerText)
-        }`
-      );
-    else if (totalXiu.innerText == totalTai.innerText)
-      showStatus(`Ván này hòa`);
-    else if (totalXiu.innerText < totalTai.innerText)
-      showStatus(
-        `Ván này thua ${
-          Number(totalTai.innerText) - Number(totalXiu.innerText)
-        }`
-      );
-  } else {
-    money.innerText = Number(money.innerText) + Number(totalTai.innerText) * 2;
-    if (totalTai.innerText > totalXiu.innerText)
-      showStatus(
-        `Ván này thắng ${
-          Number(totalTai.innerText) - Number(totalXiu.innerText)
-        }`
-      );
-    else if (totalXiu.innerText == totalTai.innerText)
-      showStatus(`Ván này hòa`);
-    else if (totalTai.innerText < totalXiu.innerText)
-      showStatus(
-        `Ván này thua ${
-          Number(totalXiu.innerText) - Number(totalTai.innerText)
-        }`
-      );
-    localStorage.setItem("money", money.innerText);
-  }
-  totalXiu.innerText = 0;
-  totalTai.innerText = 0;
+  let roll = setInterval(() => {
+    dice.style.display = "none";
+    result.style.display = "flex";
+    tongKet();
+    clearInterval(roll);
+  }, 3200);
+}
+function tongKet() {
+  arrDice = rdDice();
+  let resultMoney = setTimeout(() => {
+    result.style.display = "none";
+    time.style.display = "block";
+    console.log(Number(arrDice[0] + arrDice[1] + arrDice[2]));
+    if (Number(arrDice[0] + arrDice[1] + arrDice[2]) <= 10) {
+      money.innerText =
+        Number(money.innerText) + Number(totalXiu.innerText) * 2;
+      if (totalXiu.innerText > totalTai.innerText)
+        showStatus(
+          `Ván này thắng ${
+            Number(totalXiu.innerText) - Number(totalTai.innerText)
+          }`
+        );
+      else if (totalXiu.innerText == totalTai.innerText)
+        showStatus(`Ván này hòa`);
+      else if (totalXiu.innerText < totalTai.innerText)
+        showStatus(
+          `Ván này thua ${
+            Number(totalTai.innerText) - Number(totalXiu.innerText)
+          }`
+        );
+    } else {
+      money.innerText =
+        Number(money.innerText) + Number(totalTai.innerText) * 2;
+      if (totalTai.innerText > totalXiu.innerText)
+        showStatus(
+          `Ván này thắng ${
+            Number(totalTai.innerText) - Number(totalXiu.innerText)
+          }`
+        );
+      else if (totalXiu.innerText == totalTai.innerText)
+        showStatus(`Ván này hòa`);
+      else if (totalTai.innerText < totalXiu.innerText)
+        showStatus(
+          `Ván này thua ${
+            Number(totalXiu.innerText) - Number(totalTai.innerText)
+          }`
+        );
+      localStorage.setItem("money", money.innerText);
+    }
+    totalXiu.innerText = 0;
+    totalTai.innerText = 0;
+    clearTimeout(resultMoney);
+  }, 3000);
+  setTimeout(function () {
+    showStatus("Chờ game mới bắt đầu");
+  }, 4000);
+  setTimeout(() => {
+    startGame();
+  }, 8000);
 }
 function startGame() {
   showStatus(`Game bắt đầu`);
-  start = 15;
+  start = 3;
   let coutDownTime = setInterval(function () {
     time.innerHTML = `${start}`;
     start--;
@@ -155,7 +168,7 @@ function startGame() {
       time.style.display = "none";
       countDownDice();
       gameOver();
-      time.innerText = "15";
+      time.innerText = "3";
     }
   }, 1000);
 }
