@@ -29,8 +29,8 @@ function rdDice() {
 }
 
 //BET
-
-localStorage.setItem("money",Number.isNaN(localStorage.getItem('money')) || !localStorage.getItem('money') ? 1000000000 : localStorage.getItem('money'))
+localStorage.setItem("money", 10000)
+// localStorage.setItem("money",Number.isNaN(localStorage.getItem('money')) || !localStorage.getItem('money') ? 1000000000 : localStorage.getItem('money'))
 money.innerText = `${localStorage.getItem("money")}`;
 btnBet.addEventListener("click", () => {
   if (start <= 0) {
