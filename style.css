@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 .container {
-  height: 98vh;
+  height: 100vh;
   display: flex;
   flex-direction: column;
   background-image: url(./img/bgtest.png);
@@ -22,6 +22,7 @@
   background-image: url(./img/background-616360_1920.jpg);
   background-size: 100% 100%;
   background-repeat: no-repeat;
+  border: 1.5px solid whitesmoke;
 }
 
 .bet {
@@ -31,15 +32,16 @@
   border-radius: 20px;
   outline: none;
   font-size: 20px;
-  border: 1px solid blue;
+  border: 1.5px solid black;
 }
 
 #time {
-  font-size: 40px;
+  font-size: 44px;
   width: 250px;
   height: 250px;
   line-height: 250px;
   display: block;
+  font-weight: 500;
 }
 
 #dice {
@@ -71,6 +73,7 @@
   font-size: 18px;
   border: 1px solid black;
   border-radius: 20px;
+  font-weight: 600;
 }
 
 #btn-bet:hover {
@@ -86,6 +89,7 @@
   font-size: 18px;
   border: 1px solid black;
   border-radius: 20px;
+  font-weight: 600;
 }
 
 #btn-clear:hover {
@@ -132,10 +136,10 @@
 }
 
 .user {
-  padding-top: 50px;
+  padding-top: 40px;
   display: flex;
   justify-content: center;
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 500;
   font-weight: 700;
 }
@@ -148,7 +152,7 @@
   width: 100px;
   height: 100px;
   border-radius: 50% 50%;
-  border: 3px solid aqua;
+  border: 3px solid black;
   text-align: center;
   display: flex;
   justify-content: center;
@@ -156,7 +160,7 @@
   font-size: 40px;
   font-weight: 900;
   margin-bottom: 10px;
-  color: aqua;
+  color: black;
 }
 
 .circle-tai {
@@ -184,21 +188,23 @@
 #total-tai {
   margin-bottom: 10px;
   font-size: 22px;
-  color: white;
+  color: black;
+  font-weight: 600;
 }
 
 #total-xiu {
   margin-bottom: 10px;
   font-size: 22px;
-  color: aqua;
+  color: black;
+  font-weight: 600;
 }
 
 .logo {
   background-image: url(./img/logotaixiu.png);
-  background-size: 10%;
+  background-size: 13%;
   background-repeat: no-repeat;
   width: 100vw;
-  height: 15vh;
+  height: 20vh;
   background-position: center;
   margin-bottom: 15px;
   margin-top: 20px;
@@ -214,4 +220,5 @@
   text-align: center;
   font-size: 30px;
   color: blue;
+  font-weight: 600;
 }
