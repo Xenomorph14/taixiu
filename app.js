@@ -102,18 +102,23 @@ function gameOver() {
   let roll = setInterval(() => {
     dice.style.display = "none";
     result.style.display = "flex";
+    arrDice = rdDice();
+    if(Number(arrDice[0] + arrDice[1] + arrDice[2]) <= 10){
+      circleXiu[0].style.animation="zoominoutsinglefeatured 1s infinite";
+    }else if(Number(arrDice[0] + arrDice[1] + arrDice[2]) > 10){
+      circleTai[0].style.animation="zoominoutsinglefeatured 1s infinite";
+  }
     tongKet();
     clearInterval(roll);
   }, 3200);
 }
 function tongKet() {
-  arrDice = rdDice();
+  // arrDice = rdDice();
   let resultMoney = setTimeout(() => {
     result.style.display = "none";
     time.style.display = "block";
     console.log(Number(arrDice[0] + arrDice[1] + arrDice[2]));
     if (Number(arrDice[0] + arrDice[1] + arrDice[2]) <= 10) {
-      circleXiu[0].style.animation="zoominoutsinglefeatured 1s infinite"
       money.innerText =
         Number(money.innerText) + Number(totalXiu.innerText) * 2;
       if (totalXiu.innerText > totalTai.innerText)
@@ -159,12 +164,13 @@ function tongKet() {
   setTimeout(() => {
     startGame();
     circleXiu[0].style.animation="zoominoutsinglefeatured 0s infinite"
+    circleTai[0].style.animation="zoominoutsinglefeatured 0s infinite"
 
   }, 8000);
 }
 function startGame() {
   showStatus(`Game bắt đầu`);
-  start = 3;
+  start = 5;
   let coutDownTime = setInterval(function () {
     time.innerHTML = `${start}`;
     start--;
@@ -173,7 +179,7 @@ function startGame() {
       time.style.display = "none";
       countDownDice();
       gameOver();
-      time.innerText = "3";
+      time.innerText = "5";
     }
   }, 1000);
 }
