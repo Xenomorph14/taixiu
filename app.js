@@ -110,7 +110,7 @@ function gameOver() {
   }
     tongKet();
     clearInterval(roll);
-  }, 3200);
+  }, 2000);
 }
 function tongKet() {
   // arrDice = rdDice();
@@ -160,13 +160,12 @@ function tongKet() {
   }, 3000);
   setTimeout(function () {
     showStatus("Chờ game mới bắt đầu");
+    circleXiu[0].style.animation="zoominoutsinglefeatured 0s infinite"
+    circleTai[0].style.animation="zoominoutsinglefeatured 0s infinite"
   }, 4000);
   setTimeout(() => {
     startGame();
-    circleXiu[0].style.animation="zoominoutsinglefeatured 0s infinite"
-    circleTai[0].style.animation="zoominoutsinglefeatured 0s infinite"
-
-  }, 8000);
+  }, 6000);
 }
 function startGame() {
   showStatus(`Game bắt đầu`);
