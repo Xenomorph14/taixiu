@@ -10,6 +10,8 @@ const dice3 = document.getElementById("dice3");
 const money = document.getElementById("tkhienco");
 const thongBao = document.getElementById("thongbao");
 const diceRoll = document.getElementById("dice-roll");
+const circleTai=document.getElementsByClassName("circle-tai");
+const circleXiu=document.getElementsByClassName("circle-xiu");
 //Random Dice
 
 let start = 10;
@@ -111,6 +113,7 @@ function tongKet() {
     time.style.display = "block";
     console.log(Number(arrDice[0] + arrDice[1] + arrDice[2]));
     if (Number(arrDice[0] + arrDice[1] + arrDice[2]) <= 10) {
+      circleXiu[0].style.animation="zoominoutsinglefeatured 1s infinite"
       money.innerText =
         Number(money.innerText) + Number(totalXiu.innerText) * 2;
       if (totalXiu.innerText > totalTai.innerText)
@@ -155,6 +158,8 @@ function tongKet() {
   }, 4000);
   setTimeout(() => {
     startGame();
+    circleXiu[0].style.animation="zoominoutsinglefeatured 0s infinite"
+
   }, 8000);
 }
 function startGame() {
