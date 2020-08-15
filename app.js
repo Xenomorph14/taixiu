@@ -30,7 +30,7 @@ function rdDice() {
 
 //BET
 
-money.innerText = `${localStorage.getItem("money")}`;
+money.innerText = `${localStorage.getItem("money") || 100000000}`;
 btnBet.addEventListener("click", () => {
   if (start <= 0) {
     showStatus("Hết giờ đặt cược");
