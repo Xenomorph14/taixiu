@@ -172,7 +172,7 @@ function tongKet() {
 }
 function startGame() {
   showStatus(`Game bắt đầu`);
-  start = 5;
+  start = 60;
   let coutDownTime = setInterval(function () {
     time.innerHTML = `${start}`;
     start--;
@@ -181,7 +181,7 @@ function startGame() {
       time.style.display = "none";
       countDownDice();
       gameOver();
-      time.innerText = "5";
+      time.innerText = "60";
     }
   }, 1000);
 }
