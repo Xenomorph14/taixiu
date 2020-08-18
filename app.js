@@ -119,7 +119,6 @@ function tongKet() {
   let resultMoney = setTimeout(() => {
     result.style.display = "none";
     time.style.display = "block";
-    console.log(Number(arrDice[0] + arrDice[1] + arrDice[2]));
     if (Number(arrDice[0] + arrDice[1] + arrDice[2]) <= 10) {
       money.innerText =
         Number(money.innerText) + Number(totalXiu.innerText) * 2;
