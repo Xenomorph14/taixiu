@@ -30,7 +30,7 @@ function rdDice() {
 
 //BET
 if(!localStorage.getItem('money')){
-  localStorage.setItem("money", 100000000000000)
+  localStorage.setItem("money", 10000000)
 }
 money.innerText = `${localStorage.getItem("money")}`;
 btnBet.addEventListener("click", () => {
